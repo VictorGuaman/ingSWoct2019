@@ -396,6 +396,13 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         txt_venta_apellido.setText("");
         txt_venta_edad.setText("");
         txt_venta_tipoPasajero.setText("");
+        txt_busca_ruta.setText("");
+        txt_venta_fecha.setText("");
+        txt_venta_costo.setText("");
+        txt_venta_hora.setText("");
+        txt_venta_numboleto.setText("");
+        txt_venta_descuento.setText("");
+        txt_venta_total.setText("");
 
     }//GEN-LAST:event_btn_ventas_nuevoActionPerformed
 
@@ -412,6 +419,8 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         txt_venta_apellido.setText((String) v.elementAt(1));
         txt_venta_edad.setText((String) v.elementAt(2));
         txt_venta_tipoPasajero.setText((String) v.elementAt(4));
+
+        
     }//GEN-LAST:event_btn_buscarr_pasajeroActionPerformed
 
     private void btn_p_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_guardarActionPerformed
