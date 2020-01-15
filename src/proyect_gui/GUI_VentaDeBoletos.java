@@ -3,6 +3,7 @@ package proyect_gui;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import proyect_clases.Boleto;
 import proyect_clases.Pasajero;
 import proyect_clases.Rutas;
 import proyect_metodos.MetodoBoleto;
@@ -13,9 +14,11 @@ import proyect_metodos.MetodoRutas;
 public class GUI_VentaDeBoletos extends javax.swing.JFrame {
     MetodoPasajero buscarP = new MetodoPasajero ();
     MetodoRutas buscarR = new MetodoRutas ();
-    MetodoBoleto boleto = new MetodoBoleto();
+    MetodoBoleto metodos = new MetodoBoleto();
+    Boleto boleto = new Boleto ();
     Pasajero pasajero = new Pasajero();
     DefaultTableModel mdlTablaP;
+    //Boleto boleto1 = new Boleto();
     
     public GUI_VentaDeBoletos() {
         initComponents();
@@ -425,7 +428,7 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
 
     private void btn_p_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_guardarActionPerformed
         // TODO add your handling code here:
-
+        
         try{
         String cedulaP_b = txt_venta_busca_cedula.getText();
         String nombreP_b = txt_venta_nombre.getText();
@@ -441,12 +444,19 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         int numBoletosB = Integer.parseInt(txt_venta_numboleto.getText());
         int descuentoB = Integer.parseInt(txt_venta_descuento.getText());
         int totalB = Integer.parseInt(txt_venta_total.getText());
+        
+        boleto.setNumero_boleto(numBoletosB);
+        boleto.setCosto_boleto(totalB);
+        boleto.setFecha_boleto(fechaR_b);
+        boleto.setHora_boleto(horaR_b);
+        metodos.guardarBoleto(boleto);
+        metodos.guardarArchivoBoleto(boleto);
+        //table_usuario.setModel(metodos.listaUsuario());
+        
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, "Ingresa los datos correctamente");
         }
-            
-        // FALTA CREAR BOLETOS E GENERAR ARCHIVO TXT
-        //boleto.setNombre_pasajero(nombreP_b);
+        
         
     }//GEN-LAST:event_btn_p_guardarActionPerformed
 

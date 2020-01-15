@@ -14,11 +14,23 @@ import proyect_clases.Boleto;
 import proyect_clases.Pasajero;
 import proyect_clases.Usuario;
 import proyect_gui.GUI_Principal;
+import proyect_gui.GUI_VentaDeBoletos;
 
 public class MetodoBoleto {
     Vector vPrincipal = new Vector();
     
     public void crearBoleto(Boleto unBoleto) {
+        
+        vPrincipal.addElement(unBoleto);
+        
+    }
+    
+    public void guardarBoleto(Boleto unBoleto) {
+        vPrincipal.addElement(unBoleto);
+    }
+    
+    //guardar archivo txt
+    public void guardarArchivoBoleto(Boleto unBoleto){
         
         try {
             FileWriter fw = new FileWriter (".\\Boleto.txt", true);
@@ -32,16 +44,6 @@ public class MetodoBoleto {
         } catch (IOException e){
             JOptionPane.showMessageDialog(null, e);
         }
-        
-    }
-    
-    public void guardarBoleto(Boleto unBoleto) {
-        vPrincipal.addElement(unBoleto);
-    }
-    
-    //guardar archivo txt
-    public void guardarArchivoBoleto(Pasajero pasajero){
-        
         //FALTA
         
     }
