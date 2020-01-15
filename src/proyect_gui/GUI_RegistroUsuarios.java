@@ -84,6 +84,11 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        table_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_usuarioMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table_usuario);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -329,6 +334,21 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_u_editarActionPerformed
+
+    private void table_usuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_usuarioMouseClicked
+        int row = (int)  table_usuario.getSelectedRow();
+        String id_u = (String) table_usuario.getModel().getValueAt(row, 0);
+        String nombre_u = (String) table_usuario.getModel().getValueAt(row, 1);
+        String apellido_u = (String) table_usuario.getModel().getValueAt(row, 2);
+        String user_u = (String) table_usuario.getModel().getValueAt(row, 3);
+        String password_u = (String) table_usuario.getModel().getValueAt(row, 4);
+        
+       txt_u_id.setText(id_u);
+        txt_u_nombre.setText(nombre_u);
+        txt_u_apellido.setText(apellido_u);
+        txt_u_user.setText(user_u);
+        txt_u_password.setText(password_u);
+    }//GEN-LAST:event_table_usuarioMouseClicked
 
     /**
      * @param args the command line arguments
