@@ -308,7 +308,7 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         metodos.guardarArchivoUsuario(usuario);
         table_usuario.setModel(metodos.listaUsuario());
         } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Ingresa los datos correctamente");
+            JOptionPane.showMessageDialog(null, "Ingresa los datos del usuario correctamente");
         }
     }//GEN-LAST:event_btn_u_guardarActionPerformed
 

@@ -3,6 +3,7 @@ package proyect_gui;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import proyect_clases.Rutas;
 import proyect_metodos.MetodoRutas;
 
@@ -302,6 +303,7 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
 
         mdlTablaR = new DefaultTableModel();
 
+        try {
         int id_r = Integer.parseInt(txt_r_id.getText());
         String nombre_r = txt_r_nombre.getText();
         String origen_r = txt_r_origen.getText();
@@ -320,6 +322,9 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         metodos.guardarRutas(ruta);
         metodos.guardarArchivoRutas(ruta);
         table_rutas.setModel(metodos.listaRutas());
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Ingresa los datos de la ruta correctamente");
+        }
     }//GEN-LAST:event_btn_r_guardarActionPerformed
 
     private void btn_r_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_r_salirActionPerformed
