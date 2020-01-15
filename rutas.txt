@@ -1,2 +1,4 @@
 1|UIO_ALS|Quito|Alausi|10|08:30|02/02/2020
 1|UIO_ALS|Quito|Alausi|20|08:30|02/02/2020
+2|GYE_UIO|Guayaquil|Quito|15|10:20|03/02/2020
+3|CUE_GYE|Cuenca|Guayaquil|17|11:00|04/02/2020

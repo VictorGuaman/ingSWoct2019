@@ -1,1 +1,3 @@
 Victor|Guaman|Normal|1723789267|23
+Liliana|Velasquez|Normal|1721007357|28
+Gabriela|Carbo|Normal|1234567890|28
