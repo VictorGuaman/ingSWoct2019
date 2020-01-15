@@ -2,6 +2,7 @@ package proyect_gui;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -292,8 +293,9 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
         mdlTablaU = new DefaultTableModel();
         
-        int id_u = Integer.parseInt(txt_u_id.getText());
-        String nombre_u = txt_u_nombre.getText();
+       try {
+           int id_u = Integer.parseInt(txt_u_id.getText());
+               String nombre_u = txt_u_nombre.getText();
         String apellido_u = txt_u_apellido.getText();
         String user_u = txt_u_user.getText();
         String password_u = txt_u_password.getText();
@@ -305,6 +307,9 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         metodos.guardarUsuario(usuario);
         metodos.guardarArchivoUsuario(usuario);
         table_usuario.setModel(metodos.listaUsuario());
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Ingresa los datos correctamente");
+        }
     }//GEN-LAST:event_btn_u_guardarActionPerformed
 
     private void btn_u_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_u_salirActionPerformed
