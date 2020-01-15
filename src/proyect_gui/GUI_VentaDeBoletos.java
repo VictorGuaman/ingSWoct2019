@@ -426,6 +426,7 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
     private void btn_p_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_guardarActionPerformed
         // TODO add your handling code here:
 
+        try{
         String cedulaP_b = txt_venta_busca_cedula.getText();
         String nombreP_b = txt_venta_nombre.getText();
         String apellidoP_b = txt_venta_apellido.getText();
@@ -440,6 +441,9 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         int numBoletosB = Integer.parseInt(txt_venta_numboleto.getText());
         int descuentoB = Integer.parseInt(txt_venta_descuento.getText());
         int totalB = Integer.parseInt(txt_venta_total.getText());
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Ingresa los datos correctamente");
+        }
             
         // FALTA CREAR BOLETOS E GENERAR ARCHIVO TXT
         //boleto.setNombre_pasajero(nombreP_b);
