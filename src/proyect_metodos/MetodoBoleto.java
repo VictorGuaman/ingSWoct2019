@@ -20,7 +20,18 @@ public class MetodoBoleto {
     
     public void crearBoleto(Boleto unBoleto) {
         
-        //FALTA
+        try {
+            FileWriter fw = new FileWriter (".\\Boleto.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            pw.print(unBoleto.getNumero_boleto());
+            pw.print("|"+unBoleto.getFecha_boleto());
+            pw.print("|"+unBoleto.getHora_boleto());
+            pw.print("|"+unBoleto.getCosto_boleto());
+            pw.close();
+        } catch (IOException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
         
     }
     
