@@ -87,6 +87,11 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        table_pasajero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_pasajeroMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table_pasajero);
 
         btn_p_guardar.setText("Guardar");
@@ -287,6 +292,22 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         // Carga los datos del archivo de texto con la base de datos de pasajeros:
         table_pasajero.setModel(metodos.listaPasajero());
     }//GEN-LAST:event_btn_p_actializarActionPerformed
+
+    private void table_pasajeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_pasajeroMouseClicked
+        int row = (int)  table_pasajero.getSelectedRow();
+        String nombre_p= (String) table_pasajero.getModel().getValueAt(row, 0);
+        String apellido_p = (String) table_pasajero.getModel().getValueAt(row, 1);
+        String pasajero_p = (String) table_pasajero.getModel().getValueAt(row, 2);
+        String cedula_p = (String) table_pasajero.getModel().getValueAt(row, 3);
+        String edad_p = (String) table_pasajero.getModel().getValueAt(row, 4);
+        
+       txt_p_nombre.setText(nombre_p);
+        txt_p_apellido.setText(apellido_p);
+        txt_p_pasajero.setText(pasajero_p);
+        txt_p_cedula.setText(cedula_p);
+        txt_p_edad.setText(edad_p);
+
+    }//GEN-LAST:event_table_pasajeroMouseClicked
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_p_actializar;
