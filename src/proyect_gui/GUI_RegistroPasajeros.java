@@ -250,6 +250,7 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         
         mdlTablaP = new DefaultTableModel();
       
+        try{
         String nombre_p = txt_p_nombre.getText();
         String apellido_p = txt_p_apellido.getText();
         String pasajero_p = txt_p_pasajero.getText();
@@ -266,6 +267,9 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         metodos.guardarPasajero(pasajero);
         metodos.guardarArchivoPasajero(pasajero);
         table_pasajero.setModel(metodos.listaPasajero());
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Ingresa los datos del pasajero correctamente");
+        }
     }//GEN-LAST:event_btn_p_guardarActionPerformed
 
     private void btn_p_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_salirActionPerformed
